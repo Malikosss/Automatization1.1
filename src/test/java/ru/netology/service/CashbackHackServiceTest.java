@@ -1,34 +1,34 @@
 package ru.netology.service;
 
-import org.testng.Assert;
-import org.testng.annotations.Ignore;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
     @Test
-    void shouldWriteAmountBeforeBoundary() {
+    public void shouldWriteAmountBeforeBoundary() {
         CashbackHackService service = new CashbackHackService();
         int expected = 200;
         int actual = service.remain(800);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    void shouldWriteAmountAfterBoundary() {
+    public void shouldWriteAmountAfterBoundary() {
         CashbackHackService service = new CashbackHackService();
         int expected = 900;
         int actual = service.remain(1100);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    void shouldWriteAmountIsBoundary() {
+    public void shouldWriteAmountIsBoundary() {
         CashbackHackService service = new CashbackHackService();
         int expected = 1000;
         int actual = service.remain(1000);
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 }
